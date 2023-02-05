@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, } from "typeorm"
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, UpdateDateColumn, CreateDateColumn, } from "typeorm"
+import { Contact } from "./contact.entity"
 
 @Entity()
 export class User {
@@ -20,6 +21,12 @@ export class User {
     @CreateDateColumn()
     created_at: Date
 
+    @UpdateDateColumn()
+    updated_at: Date
+
     @Column()
     password: string
+
+    @OneToMany(() => Contact, (contact) => contact.user, {eager: true})
+    contacts: Contact[]
 }

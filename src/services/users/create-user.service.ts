@@ -19,6 +19,7 @@ export async function createUserService({email, first_name, phone_number, last_n
     user.email = email
     user.phone_number = phone_number
     user.password = password
+    user.contacts = []
 
     userRepository.create(user)
     await userRepository.save(user)

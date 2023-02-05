@@ -1,7 +1,7 @@
 import { AppDataSource } from "../../database";
 import {User} from "../../entities/user.entity"
 import { AppError } from "../../errors";
-import { ICreateUserResponse, IUpdateUser } from "../../interfaces";
+import { IUpdateUser } from "../../interfaces";
 
 export async function updateUserService(id: string, data: IUpdateUser) {
     const userRepository = AppDataSource.getRepository(User)
@@ -13,7 +13,7 @@ export async function updateUserService(id: string, data: IUpdateUser) {
     
     const {email, first_name, last_name, password, phone_number} = data
     
-    if(email){
+    if(email && email !== userExists.email){
         const emailAlreadyExists = await userRepository.findOne({where: { email }})
 
         if (emailAlreadyExists) {

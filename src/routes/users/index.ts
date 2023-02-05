@@ -1,4 +1,4 @@
-import {Router} from "express"
+import { Router } from "express"
 import { createUserController } from "../../controllers/users/create-user.controller"
 import { listUserController } from "../../controllers/users/list-user.controller"
 import { loginUserController } from "../../controllers/users/login-user.controller"
