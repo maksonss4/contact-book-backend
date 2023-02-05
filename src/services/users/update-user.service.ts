@@ -1,7 +1,7 @@
 import { AppDataSource } from "../../database";
 import {User} from "../../entities/user.entity"
 import { AppError } from "../../errors";
-import { IUserUpdate } from "../../interfaces/user";
+import { IUserResponse, IUserUpdate } from "../../interfaces/user";
 
 export async function updateUserService(id: string, data: IUserUpdate) {
     const userRepository = AppDataSource.getRepository(User)
@@ -31,5 +31,8 @@ export async function updateUserService(id: string, data: IUserUpdate) {
 
     const userUpdate  = await userRepository.findOneBy({id}) 
     
-    return userUpdate
+    const userResponse = <IUserResponse>{ ...userUpdate }
+    delete userResponse.password
+    
+    return userResponse
 }
