@@ -27,7 +27,7 @@ export async function createContactService(data: IContactRequest, id: string){
 
     const contactResponse: IContactResponse = {...newContact}
     delete contactResponse.user
-    contactResponse.user_id = userExists.id
+    contactResponse.owner_id = userExists.id
 
     return contactResponse
 }

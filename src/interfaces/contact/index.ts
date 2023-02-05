@@ -5,7 +5,7 @@ export interface IContactResponse{
     last_name?: string
     email: string
     phone_number: string
-    user_id?: string
+    owner_id?: string
     user?: User
 }
 
@@ -14,4 +14,11 @@ export interface IContactRequest{
     last_name?: string
     email: string
     phone_number: string
+}
+
+export interface IContactUpdate{
+    first_name?: string
+    last_name?: string
+    email?: string
+    phone_number?: string
 }

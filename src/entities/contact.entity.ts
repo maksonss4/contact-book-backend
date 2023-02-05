@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, } from "typeorm"
+import {Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, ManyToOne, CreateDateColumn, } from "typeorm"
 import { User } from "./user.entity"
 
 @Entity()
@@ -20,6 +20,9 @@ export class Contact {
 
     @CreateDateColumn()
     created_at: Date
+
+    @UpdateDateColumn()
+    updated_at: Date
 
     @ManyToOne(() => User, (user) => user.contacts, { 
         onDelete: 'CASCADE' 
