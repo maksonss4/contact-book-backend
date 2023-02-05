@@ -27,6 +27,6 @@ export class User {
     @Column()
     password: string
 
-    @OneToMany(() => Contact, (contact) => contact.user, {eager: true})
+    @OneToMany(() => Contact, (contact) => contact.user)
     contacts: Contact[]
 }

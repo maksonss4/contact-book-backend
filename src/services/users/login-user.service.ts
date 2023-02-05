@@ -1,11 +1,11 @@
 import { AppDataSource } from "../../database";
 import { User } from "../../entities/user.entity";
 import { AppError } from "../../errors";
-import { ILoginUser } from "../../interfaces";
+import { IUserLogin } from "../../interfaces/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export async function loginUserService({email, password}: ILoginUser){
+export async function loginUserService({email, password}: IUserLogin){
     const userRepository = AppDataSource.getRepository(User)
     const userExist = await userRepository.findOne({ where: { email } })
     

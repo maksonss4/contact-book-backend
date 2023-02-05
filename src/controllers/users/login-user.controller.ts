@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { AppError } from "../../errors";
-import { ILoginUser } from "../../interfaces";
+import { IUserLogin } from "../../interfaces/user";
 import {loginUserService} from "../../services/users/login-user.service"
 
 export async function loginUserController(req: Request, res: Response) {
-  const data: ILoginUser = req.validatedBody;
+  const data: IUserLogin = req.validatedBody;
     try {
         const token = await loginUserService(data);
         return res.status(200).json({ token });

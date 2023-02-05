@@ -1,11 +1,12 @@
 import { AppDataSource } from "../../database";
 import { User } from "../../entities/user.entity";
 import { AppError } from "../../errors";
-import { ICreateUserRequest, ICreateUserResponse } from "../../interfaces";
+import { IUserRequest, IUserResponse } from "../../interfaces/user";
 
 
-export async function createUserService({email, first_name, phone_number, last_name, password}: ICreateUserRequest){
+export async function createUserService(data: IUserRequest){
     const userRepository = AppDataSource.getRepository(User)
+    const {email, first_name, phone_number, last_name, password} = data
 
     const emailAlreadyExists = await userRepository.findOne({where: { email }})
 
@@ -19,12 +20,11 @@ export async function createUserService({email, first_name, phone_number, last_n
     user.email = email
     user.phone_number = phone_number
     user.password = password
-    user.contacts = []
 
     userRepository.create(user)
     await userRepository.save(user)
 
-    const userResponse: ICreateUserResponse = { ...user }
+    const userResponse: IUserResponse = { ...user }
     delete userResponse.password
 
     return userResponse

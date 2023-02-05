@@ -1,9 +1,9 @@
 import { AppDataSource } from "../../database";
 import {User} from "../../entities/user.entity"
 import { AppError } from "../../errors";
-import { IUpdateUser } from "../../interfaces";
+import { IUserUpdate } from "../../interfaces/user";
 
-export async function updateUserService(id: string, data: IUpdateUser) {
+export async function updateUserService(id: string, data: IUserUpdate) {
     const userRepository = AppDataSource.getRepository(User)
     const userExists = await userRepository.findOne({where: {id}})
     

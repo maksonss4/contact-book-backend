@@ -1,9 +1,9 @@
-export interface ILoginUser{
+export interface IUserLogin{
     email:string
     password: string
 }
 
-export interface ICreateUserResponse{
+export interface IUserResponse{
     id: string
     first_name: string
     last_name: string
@@ -13,7 +13,7 @@ export interface ICreateUserResponse{
     password?: string
 }
 
-export interface ICreateUserRequest {
+export interface IUserRequest {
     first_name: string
     last_name: string
     email: string
@@ -21,11 +21,7 @@ export interface ICreateUserRequest {
     password: string
 }
 
-// export interface IUser extends ICreateUserRequest{
-//     created_at: Date
-// }
-
-export interface IUpdateUser{
+export interface IUserUpdate{
     first_name?: string
     last_name?: string
     email?: string

@@ -1,10 +1,10 @@
 import {Request, Response} from "express"
 import { AppError } from "../../errors"
-import { ICreateUserRequest } from "../../interfaces"
+import { IUserRequest } from "../../interfaces/user"
 import { createUserService } from "../../services/users/create-user.service"
 
 export async function createUserController(req: Request, res:Response){
-    const data: ICreateUserRequest = req.validatedBody
+    const data: IUserRequest = req.validatedBody
 
     try {
         const newUser = await createUserService(data)

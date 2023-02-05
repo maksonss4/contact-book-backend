@@ -1,12 +1,12 @@
 import {Request, Response} from "express"
 import { AppError } from "../../errors"
-import { IUpdateUser } from "../../interfaces"
+import { IUserUpdate } from "../../interfaces/user"
 import { updateUserService } from "../../services/users/update-user.service"
 
 export async function updateUserController(req:Request, res:Response){
     try {
         const id = req.idToken
-        const data: IUpdateUser = req.validatedBody
+        const data: IUserUpdate = req.validatedBody
 
         const user = await updateUserService(id, data)
         return res.status(200).json({

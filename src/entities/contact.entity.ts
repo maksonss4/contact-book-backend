@@ -12,7 +12,7 @@ export class Contact {
     @Column({nullable: true})
     last_name: string
 
-    @Column({unique: true})
+    @Column()
     email: string
 
     @Column()

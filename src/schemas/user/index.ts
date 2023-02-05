@@ -1,9 +1,9 @@
 import * as yup from "yup";
 import { SchemaOf } from "yup";
 import bcrypt from "bcrypt"
-import { ICreateUserRequest, ILoginUser, IUpdateUser } from "../interfaces";
+import { IUserRequest, IUserLogin, IUserUpdate } from "../../interfaces/user";
 
-export const createUserSchema: SchemaOf<ICreateUserRequest> = yup.object().shape({
+export const createUserSchema: SchemaOf<IUserRequest> = yup.object().shape({
     first_name: yup.string().required(),
     last_name: yup.string().required(),
     phone_number: yup.string().length(11).required(),
@@ -15,14 +15,14 @@ export const createUserSchema: SchemaOf<ICreateUserRequest> = yup.object().shape
     })
 })
 
-export const loginUserSchema: SchemaOf<ILoginUser> = yup.object().shape({
+export const loginUserSchema: SchemaOf<IUserLogin> = yup.object().shape({
     email: yup.string().email().required().transform((value:string, originalValue:string)=> {
         return originalValue.toLowerCase()
     }),
     password: yup.string().required()
 })
 
-export const updateUserSchema: SchemaOf<IUpdateUser> = yup.object().shape({
+export const updateUserSchema: SchemaOf<IUserUpdate> = yup.object().shape({
     first_name: yup.string().notRequired(),
     last_name: yup.string().notRequired(),
     phone_number: yup.string().length(11).notRequired(),
