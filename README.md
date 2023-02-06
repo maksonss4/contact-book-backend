@@ -80,6 +80,7 @@
     - [Corpo da Requisição:](#corpo-da-requisição-8)
     - [Exemplo de Response:](#exemplo-de-response-8)
     - [Possíveis Erros:](#possíveis-erros-8)
+  - [6. Rodando testes integrados](#6-rodando-testes-integrados)
 
 ---
 
@@ -739,5 +740,17 @@ Vazio
 | 400 not found   | Invalid UUID (contact id)    |
 | 403 forbidden   | Invalid token.               |
 | 404 not found   | Contact not found.           |
+
+---
+
+## 6. Rodando testes integrados
+
+[ Voltar para o topo ](#tabela-de-conteúdos)
+
+Depois de seguir os [passos de instalação e execução](#3-passos-de-instalação-e-execução), basta utilizar o seguinte comando para rodar todos os testes:
+
+```
+yarn test
+```
 
 ---
