@@ -183,7 +183,7 @@ Authorization: Bearer token
   - [POST - /login](#12-login-do-usuário)
   - [GET - /users](#13-listando-usuário)
   - [PATCH - /users](#14-atualização-do-usuário)
-  - [DELETE - /user](#15-delete-do-usuário)
+  - [DELETE - /users](#15-delete-do-usuário)
 - [Pets](#2-contacts)
   - [POST - /pets](#21-criação-de-um-contato)
   - [GET - /pets](#22-listar-todos-os-contatos-do-usuário)
