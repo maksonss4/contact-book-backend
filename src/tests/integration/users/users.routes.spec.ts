@@ -20,8 +20,6 @@ describe("Testing the user routes", () => {
   });
 
   test("POST /users - Testing user creation", async () => {
-    // Com nosso objeto criado, vamos criar uma constante chamada response e utilizar o request do Supertest para fazer uma requisição e guardar o seu retorno. Passamos o app como parâmetro dele. Agora usamos o método .post(), passando o endpoint “users”, e, por último, utilizamos o método .send() para enviar nosso objeto no corpo da requisição.
-
     const response = await request(app).post("/users").send(mockedUser);
 
     expect(response.status).toBe(201);
