@@ -1,10 +1,10 @@
-import * as express from "express"
+import * as express from "express";
 
 declare global {
   namespace Express {
     interface Request {
       validatedBody: any;
-      idToken: string
+      idToken: string;
     }
   }
 }
