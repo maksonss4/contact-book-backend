@@ -184,11 +184,11 @@ Authorization: Bearer token
   - [GET - /users](#13-listando-usuário)
   - [PATCH - /users](#14-atualização-do-usuário)
   - [DELETE - /users](#15-delete-do-usuário)
-- [Pets](#2-contacts)
-  - [POST - /pets](#21-criação-de-um-contato)
-  - [GET - /pets](#22-listar-todos-os-contatos-do-usuário)
-  - [PATCH - /pets/:id](#23-atualizar-dados-do-contato)
-  - [DELETE - /pets/:id](#24-delete-do-contact)
+- [Contacts](#2-contacts)
+  - [POST - /contacts](#21-criação-de-um-contato)
+  - [GET - /contacts](#22-listar-todos-os-contatos-do-usuário)
+  - [PATCH - /contacts/:id](#23-atualizar-dados-do-contato)
+  - [DELETE - /contacts/:id](#24-delete-do-contact)
 
 ---
 
