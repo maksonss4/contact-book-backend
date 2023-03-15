@@ -88,7 +88,7 @@
 
 [ Voltar para o topo ](#tabela-de-conteúdos)
 
-O projeto possui um CRUD de usuários que podem conter muitos contatos associados, onde usuários autenticados e com permissão podem acessar o CRUD dos seus contatos associados.
+O projeto possui um CRUD de usuários que podem conter muitos contatos associados, onde usuários autenticados e com permissão podem acessar o CRUD dos seus contatos associados. Para utilizar todas as funcionalidades da aplicação siga os [Passos de instalação e execução](#3-passos-de-instalação-e-execução) e após isso [clique aqui](https://contact-book-lac.vercel.app/landingpage) e acesse a aplicação ( Caso queira, pode acessar o repositório do frontend [clicando aqui](https://github.com/maksonss4/contact-book-frontend) ).
 
 ### 1.1 Diagrama ER
 
@@ -154,12 +154,10 @@ yarn typeorm migration:run -d src/database/index.ts
 yarn dev
 ```
 
-**Após iniciar o servidor localmente você pode testar algumas rotas no link do frontend da aplicação que está logo abaixo:**
+**Após iniciar o servidor localmente você pode:**
 
-[https://contact-book-lac.vercel.app/landingpage](https://contact-book-lac.vercel.app/landingpage)
-
-**Ou testar no Insomnia fazendo o dowload da coleção:**
-[Link da coleção](https://drive.google.com/file/d/1LT5LT5xpyszs8MuC09kiUxq31ZPRjoSF/view?usp=sharing)
+- Acessar o frontend da aplicação e utilizar suas funcionalidades - [Link da aplicação](https://contact-book-lac.vercel.app/landingpage)
+- Testar no Insomnia fazendo o dowload da coleção - [Link da coleção](https://drive.google.com/file/d/1LT5LT5xpyszs8MuC09kiUxq31ZPRjoSF/view?usp=sharing).
 
 ---
 
